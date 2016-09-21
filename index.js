@@ -91,6 +91,7 @@ exports.buildDirectPayURL = function (orderParams) {
         return_url: _basicConfig.return_url,
         seller_email: _basicConfig.seller_email
     };
+    if (_basicConfig.hasOwnProperty('currency')) json.currency = _basicConfig.currency
     _assignMe(json, orderParams);
     //加入签名结果与签名方式
     json.sign = _buildSign(json);
